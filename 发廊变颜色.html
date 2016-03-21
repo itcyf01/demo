@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{margin:0;padding:0;}
+@keyframes run{
+	form{left:0;}
+	to{left:-114px;}
+}
+.box{width:500px;height:50px;border:1px solid #000;position:relative;left:50%;top:50%;margin-left:-250px;margin-top:-25px;overflow:hidden;}
+.box .bar{width:800px;height:100px;background-size:contain;position:absolute;top:0;left:0;background:-webkit-repeating-linear-gradient(45deg,red 0,red 10px,#ff00ff 10px,#ff00ff 20px);
+	animation-name:run;
+	animation-duration:1s;
+	animation-timing-function:linear;
+	animation-iteration-count:infinite;
+
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+	var oCl1 = document.querySelectorAll('input')[0];
+	var oCl2 = document.querySelectorAll('input')[1];
+	var oDiv = document.getElementById('div');
+	oCl1.onchange = function(){
+		//alert(1);
+		oDiv.style.background = '-webkit-repeating-linear-gradient(45deg,'+oCl1.value+' 0,'+oCl1.value+' 10px,'+oCl2.value+' 10px,'+oCl2.value+' 20px)';	
+	};
+	oCl2.onchange = function(){
+		//alert(1);
+		oDiv.style.background = '-webkit-repeating-linear-gradient(45deg,'+oCl1.value+' 0,'+oCl1.value+' 10px,'+oCl2.value+' 10px,'+oCl2.value+' 20px)';	
+	};
+},false);
+</script>
+</head>
+
+<body>
+	color1:<input type="color" value="#ff0000">
+	color2:<input type="color" value="#ff00ff">
+	<div class="box">
+		<div class="bar" id="div"></div>
+	</div>
+</body>
+</html>

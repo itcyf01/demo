@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{margin:0;padding:0;}
+div{width:200px;height:200px;background:red;position:absolute;top:0;left:0;}
+</style>
+<script>
+window.onload = function(){
+	var oDiv = document.getElementById('div');
+	oDiv.onmousedown = function(ev){
+		var oEvent = ev||event;
+		var disX = oEvent.clientX - oDiv.offsetLeft;
+		var disY = oEvent.clientY - oDiv.offsetTop;
+		document.onmousemove = function(ev){
+			var oEvent = ev||event;
+			oDiv.style.left = oEvent.clientX - disX+'px';
+			oDiv.style.top = oEvent.clientY -disY+'px';
+			var json = {'left':oDiv.offsetLeft,'top':oDiv.offsetTop};
+			var str  = JSON.stringify(json);
+			localStorage.a = str; 
+		};
+		document.onmouseup = function(){
+			document.onmousemove = null;
+			document.onmouseup = null;	
+		};
+		return false;
+	};	
+};
+</script>
+</head>
+
+<body>
+	<div id="div"></div>
+</body>
+</html>

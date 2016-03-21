@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{margin:0;padding:0;}
+@-webkit-keyframes shine {
+          from {background-position: 100%;}
+          to {background-position: 0;}
+        }
+div{width:500px;height:150px;background:#cc6666;text-align:center;line-height:150px;font-family:宋体;font-size:50px;margin:100px auto;position:relative;left:0;top:0; 
+ -webkit-background-clip: text;    /*按文字裁剪*/        
+            -webkit-text-fill-color: transparent;    /*文字的颜色使用背景色*/    
+            
+            background-color:#19385c;    /*设置一个背景色*/        
+            background-image: -webkit-repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0) 30%, #fff, rgba(0, 0, 0, 0) 70%);        /*设置渐变的背景，按对角线渐变*/
+            
+            background-blend-mode: hard-light;    /*设置背景为混合模式下的强光模式*/
+            background-size: 200%;
+            
+            -webkit-animation: shine 4s infinite;    /*给背景添加动画改变位置*/
+}
+</style>
+</head>
+
+<body>
+	<div>移动滑块解锁</div>
+</body>
+</html>
